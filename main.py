@@ -4,6 +4,7 @@ from ultralytics import YOLO
 from PIL import Image
 import io
 import torch
+import uvicorn
 
 app = FastAPI(title="YOLO CPU Detection API")
 
@@ -40,3 +41,8 @@ async def predict(file: UploadFile = File(...)):
 
     except Exception as e:
         return JSONResponse(status_code=500, content={"error": str(e)})
+    
+
+# 👇 THIS PART is required for python main.py
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=False)
