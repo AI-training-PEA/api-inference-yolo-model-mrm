@@ -1,4 +1,4 @@
-# Run locally
+# 1) Run locally
 
 ## create virtual environment
 
@@ -20,7 +20,7 @@
 
 `python main.py`
 
-# Run using Docker
+# 2) Run using Docker
 
 ## Build
 
@@ -30,10 +30,10 @@
 
 `docker run -p 8000:8000 yolo-cpu-api`
 
-## Test
+# 3) Test
 
 ```
 curl -X POST "http://localhost:8000/predict" \
   -H "Content-Type: multipart/form-data" \
   -F "file=@202511_DPNH_221_A2_DPNH0028_20295755_020016016498.jpg"
-  ```
+```
