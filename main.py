@@ -11,7 +11,7 @@ app = FastAPI(title="YOLO CPU Detection API")
 device = "cpu"
 
 # Load model once at startup
-model = YOLO("model/best.pt")
+model = YOLO("models/best_box_14022026.pt")
 model.to(device)
 
 @app.get("/")
